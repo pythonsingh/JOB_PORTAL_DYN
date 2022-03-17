@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangalore Jobs</title>
+    <link rel="stylesheet" href="{% static "jobs1.css" %}">
+</head>
+<body>
+    <h1 class='hyd'><span style="color:#ff3c00">H</span><span style="color:#ffaa00">y</span><span style="color:#e1ff00">d</span><span style="color:#6eff00">r</span><span style="color:#00ff00">a</span><span style="color:#00ff73">b</span><span style="color:#00ffe6">a</span><span style="color:#00a6ff">d</span><span style="color:#0037ff">J</span><span style="color:#3c00ff">o</span><span style="color:#ae00ff">b</span><span style="color:#ff006e">s</span></h1>
+    {% if job_list %}
+    <table align='center'>    
+        <thead>
+        <th> Date</th>
+        <th> Company</th>
+        <th> Title</th>
+        <th> Address</th>
+        <th> Email</th>
+        <th> Phonenumber</th>
+        </thead>
+            {% for job in job_list %}
+              <tr>
+                <td class='t1'> {{job.date}}</td>
+                <td class='t2'> {{job.company}}</td>
+                <td class='t3'> {{job.title}}</td>
+                <td class='t4'> {{job.address}}</td>
+                <td class='t5'> {{job.email}}</td>
+                <td class='t6'> {{job.phonenumber}}</td>
+              </tr>
+            {% endfor %}
+            </table>  
+           {% else %}
+            <p id='pn'> No Records Found ! </p>
+            {% endif %}
+
+</body>
+</html>
